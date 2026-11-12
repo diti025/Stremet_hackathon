@@ -105,14 +105,14 @@ if role == "employee":
         welding_units["qr_code"].unique()
     )
     if qr_input:
-        # ✅ Filter ONLY welding stage
+        
         unit_row = data[data["qr_code"] == qr_input]
 
         if unit_row.empty:
             st.error("Invalid QR Code")
             st.stop()
 
-# ✅ Just pick one row (no filtering)
+
         row = unit_row.iloc[0]
 
         st.success(f"Unit: {row['unit_id']} | Machine: {row['machine_id']}")
